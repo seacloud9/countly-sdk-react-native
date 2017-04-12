@@ -4,9 +4,7 @@
  * @flow
  */
 
-import {
-  NativeModules
-} from 'react-native';
+var NativeModules =  require('react-native');
 const CountlyReactNative = NativeModules.CountlyReactNative;
 
 const Countly = {};
@@ -116,8 +114,8 @@ Countly.onSuccess = function(result){
     // alert(result);
 }
 Countly.onError = function(error){
-     // alert("error");
-     // alert(error);
+    // alert("error");
+    // alert(error);
 }
 Countly.demo = function(){
 
@@ -186,4 +184,4 @@ Countly.userData.setOnce = function(keyName, setOnce){
     CountlyReactNative.userData_setOnce([keyName.toString() || "", setOnce.toString() || ""]);
 };
 
-export default Countly; 
+module.exports =  Countly;
